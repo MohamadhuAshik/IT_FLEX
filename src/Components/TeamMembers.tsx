@@ -12,63 +12,86 @@ const teamData = [
     image: "https://images.pexels.com/photos/1680172/pexels-photo-1680172.jpeg",
   },
   {
-    name: "Mark Johnson",
-    role: "Software Engineer",
-    image: "https://images.pexels.com/photos/1800453/pexels-photo-1800453.jpeg",
+    name: "Angelo H. Tomlin",
+    role: "Senior Manager",
+    image: "https://images.pexels.com/photos/1812634/pexels-photo-1812634.jpeg",
   },
   {
-    name: "Daniel James",
-    role: "UI/UX Expert",
-    image: "https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg",
+    name: "Robert E. Whitmore",
+    role: "Web Designer",
+    image: "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg",
   },
   {
-    name: "Leo Andrew",
-    role: "Full Stack Dev",
-    image: "https://images.pexels.com/photos/1040881/pexels-photo-1040881.jpeg",
+    name: "Manuel G. Wilmer",
+    role: "CEO & Founder",
+    image: "https://images.pexels.com/photos/1704489/pexels-photo-1704489.jpeg",
   },
 ];
 
 const TeamMembers = () => {
   return (
-    <section className="px-4 py-16 bg-white">
-      <div className="max-w-7xl mx-auto">
-        
-        <div className="mb-10">
-         
-          <BellComponent content="Team Member"/>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            Meet Our Professional <br /> Team Members
-          </h2>
-          <p className="text-gray-500 max-w-xl">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptate temes
-            accusantium doloremque laudantium, totam rem
-          </p>
-        </div>
+    <section className="px-6 py-20 bg-white">
+      <div className="max-w-7xl mx-auto space-y-10">
 
-       
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {teamData.map((member, index) => (
-            <div key={index} className="text-center">
+      
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+     
+          <div>
+            <BellComponent content="Team Member" />
+            <h2 className="text-4xl font-bold text-gray-900 mt-4 mb-4 leading-tight">
+              Meet Our Professional <br /> Team Members
+            </h2>
+            <p className="text-gray-500 max-w-md">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptate temes
+              accusantium doloremque laudantium, totam rem
+            </p>
+          </div>
+
+          
+          {teamData.slice(0, 2).map((member, index) => (
+            <div key={index} className="text-left">
               <img
                 src={member.image}
                 alt={member.name}
-                className="rounded-xl w-full h-60 object-cover mb-4"
+                className="rounded-xl w-full h-52 object-cover mb-3"
               />
-              <h3 className="text-xl font-semibold text-gray-900">{member.name}</h3>
-              <p className="text-gray-500">{member.role}</p>
-              <button className="mt-3 w-8 h-8 rounded-full border border-gray-300 hover:bg-purple-100 transition text-purple-600 font-bold text-xl leading-3">
+              <h3 className="text-sm font-semibold text-gray-900">
+                {member.name}
+              </h3>
+              <p className="text-xs text-gray-500">{member.role}</p>
+              <button className="mt-2 w-7 h-7 rounded-full border border-gray-300 hover:bg-purple-100 transition text-purple-600 font-bold text-sm leading-3">
                 +
               </button>
             </div>
           ))}
         </div>
 
-       
-        <div className="mt-10 text-center">
-          <button className="bg-[#5D2CFF] hover:bg-[#4b23cc] text-white font-semibold px-6 py-3 rounded-xl shadow transition">
-            View More Members
-          </button>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 items-start">
+          {teamData.slice(2).map((member, index) => (
+            <div key={index} className="text-left">
+              <img
+                src={member.image}
+                alt={member.name}
+                className="rounded-xl w-full h-52 object-cover mb-3"
+              />
+              <h3 className="text-sm font-semibold text-gray-900">
+                {member.name}
+              </h3>
+              <p className="text-xs text-gray-500">{member.role}</p>
+              <button className="mt-2 w-7 h-7 rounded-full border border-gray-300 hover:bg-purple-100 transition text-purple-600 font-bold text-sm leading-3">
+                +
+              </button>
+            </div>
+          ))}
+
+        
+          <div className="flex   justify-center items-center  h-full  ">
+            <button className="bg-[#5D2CFF] hover:bg-[#4b23cc] text-white font-semibold px-5 py-3 rounded-xl shadow transition whitespace-nowrap">
+              View More Members
+            </button>
+          </div>
         </div>
+
       </div>
     </section>
   );
